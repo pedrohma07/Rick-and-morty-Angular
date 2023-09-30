@@ -2,8 +2,19 @@
   <img src='{{ card.image }}' alt="Character" class="character">
   <div class="data">
     <h1 class="name">{{ card.name }}</h1>
-    <h2 class="specie">Specie: {{ card.specie }}</h2>
-    <h2 class="status">Status: {{ card.status }}</h2>
-    <h2 class="gender">gender: {{ card.gender }}</h2>
+    <div class="details">
+      <span class="ball" [ngClass]="{'alive': card.status === 'Alive', 'dead': card.status === 'Dead', 'gray': card.status === 'Unknown'}"></span>
+      <span class="status">{{ card.status }}</span>
+      <span>&nbsp;-&nbsp;</span>
+      <span class="specie"> {{ card.specie }}</span>
+    </div>
+    <div class="last-location">
+      <span [ngStyle]="{'color': 'gray'}">Last known location:</span>
+      <span>{{ card.location.name }}</span>
+    </div>
+    <div class="origin">
+      <span [ngStyle]="{'color': 'gray'}">Origin:</span>
+      <span>{{ card.origin.name }}</span>
+    </div>
   </div>
 </div>
