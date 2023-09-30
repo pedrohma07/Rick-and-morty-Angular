@@ -1,0 +1,9 @@
+<div *ngFor="let card of cards" class="card ">
+  <img src='{{ card.image }}' alt="Character" class="character">
+  <div class="data">
+    <h1 class="name">{{ card.name }}</h1>
+    <h2 class="specie">Specie: {{ card.specie }}</h2>
+    <h2 class="status">Status: {{ card.status }}</h2>
+    <h2 class="gender">gender: {{ card.gender }}</h2>
+  </div>
+</div>
