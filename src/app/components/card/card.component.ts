@@ -13,7 +13,13 @@ export class CardComponent {
       status:"Alive",
       specie:"Human",
       gender:"Male",
-      image:"https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+      image:"https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+      location:{
+        name: "Citadel of Ricks"
+      },
+      origin: {
+        name: "Earth (C-137)"
+      }
     }
   ];
 
