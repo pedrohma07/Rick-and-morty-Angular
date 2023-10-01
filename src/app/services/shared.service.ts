@@ -7,12 +7,13 @@ import { BehaviorSubject } from "rxjs";
   providedIn: "root",
 })
 export class SharedService {
-  private currentPageSubject = new BehaviorSubject<number>(1);
-  currentPage$ = this.currentPageSubject.asObservable();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private currentParamSubject = new BehaviorSubject<any>(1);
+  currentParam$ = this.currentParamSubject.asObservable();
 
   constructor() {}
-
-  setCurrentPage(page: number) {
-    this.currentPageSubject.next(page);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  setCurrentPage(page: any) {
+    this.currentParamSubject.next(page);
   }
 }

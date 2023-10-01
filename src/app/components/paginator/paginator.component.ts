@@ -25,6 +25,7 @@ export class PaginatorComponent implements OnInit {
   nextPage() {
     if (this.currentPage < this.countPage) {
       this.currentPage++;
+      this.characterService.setCurrentPropriety("page");
       this.sharedService.setCurrentPage(this.currentPage); // Atualize o currentPage no SharedService
       this.router.navigate(["/", this.currentPage]);
     }
@@ -33,6 +34,7 @@ export class PaginatorComponent implements OnInit {
   prevPage() {
     if (this.currentPage > 1) {
       this.currentPage--;
+      this.characterService.setCurrentPropriety("page");
       this.sharedService.setCurrentPage(this.currentPage); // Atualize o currentPage no SharedService
       this.router.navigate(["/", this.currentPage]);
     }

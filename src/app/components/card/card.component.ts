@@ -11,7 +11,7 @@ import { SharedService } from "../../services/shared.service"; // Importe o Shar
 })
 export class CardComponent implements OnInit {
   characters: Character[] = [];
-  currentPage: number = 1;
+  currentParams = 0;
 
   constructor(
     private characterService: CharacterService,
@@ -21,8 +21,8 @@ export class CardComponent implements OnInit {
 
   ngOnInit() {
     this.getCharactersInit();
-    this.sharedService.currentPage$.subscribe((page) => {
-      this.currentPage = page;
+    this.sharedService.currentParam$.subscribe((param) => {
+      this.currentParams = param;
       this.getCharacters();
     });
   }
@@ -33,6 +33,6 @@ export class CardComponent implements OnInit {
   }
 
   getCharacters(): void {
-    this.characterService.getCharacter(this.currentPage).subscribe((characters) => (this.characters = characters));
+    this.characterService.getCharacter(this.currentParams).subscribe((characters) => (this.characters = characters));
   }
 }
