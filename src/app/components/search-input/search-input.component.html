@@ -1,1 +1,7 @@
- <input type="text" placeholder="Character's Name">
+ <input 
+  type="text" 
+  placeholder="Character's Name"
+  [(ngModel)]="characterName" 
+  (ngModelChange)="getCharacter()"
+  name="characterName"
+>

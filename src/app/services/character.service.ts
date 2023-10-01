@@ -11,9 +11,14 @@ import { Observable } from "rxjs";
 })
 export class CharacterService {
   private apiUrl = "https://rickandmortyapi.com/api/character";
+  private propriety = "page";
 
-  getCharacter(page: number): Observable<Character[]>{
-    const url = `${this.apiUrl}?page=${page}`;
+  setCurrentPropriety(params: any) {
+    this.propriety = params;
+  }
+
+  getCharacter(params: any): Observable<Character[]>{
+    const url = `${this.apiUrl}?${this.propriety}=${params}`;
     console.log(url);
     
     return this.http.get<any>(url)
