@@ -14,7 +14,8 @@ export class CharacterService {
 
   getCharacter(page: number): Observable<Character[]>{
     const url = `${this.apiUrl}?page=${page}`;
-
+    console.log(url);
+    
     return this.http.get<any>(url)
       .pipe(
         map(response => response.results.map((characterData: any) => {
