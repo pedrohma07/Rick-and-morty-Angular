@@ -1,6 +1,9 @@
 import { Component } from "@angular/core";
 import { Character } from "src/app/interface/Character";
 
+import { ActivatedRoute } from "@angular/router";
+
+
 import { CharacterService } from "src/app/services/character.service";
 
 @Component({
@@ -13,13 +16,14 @@ export class CardComponent {
   countPage!: number;
   page: number = 12;
 
-  constructor(private characterService: CharacterService){
+  constructor(private characterService: CharacterService, private route: ActivatedRoute){
     this.getCharacters();
     this.getPage();
   }
 
   getCharacters(): void {
-    this.characterService.getCharacter(this.page).subscribe((characters) => this.characters = characters);
+    const id = Number(this.route.snapshot.paramMap.get("params"));
+    this.characterService.getCharacter(id).subscribe((characters) => this.characters = characters);
   }
   getPage(): void{
     this.characterService.getPage().subscribe((pages) => this.countPage = pages.info.pages);
