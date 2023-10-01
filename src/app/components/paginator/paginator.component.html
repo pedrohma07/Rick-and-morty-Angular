@@ -1,0 +1,8 @@
+<!-- paginator.component.html -->
+<div>
+  <div class="container">
+    <button (click)="prevPage()" [disabled]="currentPage === 1"><img src="../../../assets/back-light-svgrepo-com.svg" alt="" class="button-img"></button>
+    <span>Page {{ currentPage }} of {{ countPage }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === countPage"><img src="../../../assets/next-svgrepo-com.svg" alt="" class="button-img"></button>
+  </div>
+</div>
