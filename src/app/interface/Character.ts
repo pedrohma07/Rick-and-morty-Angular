@@ -1,4 +1,4 @@
-export interface Card{
+export interface Character{
   name: string
   specie: string
   status: string

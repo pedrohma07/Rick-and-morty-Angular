@@ -1,20 +1,20 @@
-<div *ngFor="let card of cards" class="card ">
-  <img src='{{ card.image }}' alt="Character" class="character">
+<div *ngFor="let character of characters" class="character ">
+  <img src='{{ character.image }}' alt="Character" class="characterImg">
   <div class="data">
-    <h1 class="name">{{ card.name }}</h1>
+    <h1 class="name">{{ character.name }}</h1>
     <div class="details">
-      <span class="ball" [ngClass]="{'alive': card.status === 'Alive', 'dead': card.status === 'Dead', 'gray': card.status === 'Unknown'}"></span>
-      <span class="status">{{ card.status }}</span>
+      <span class="ball" [ngClass]="{'alive': character.status === 'Alive', 'dead': character.status === 'Dead', 'gray': character.status === 'unknown'}"></span>
+      <span class="status">{{ character.status }}</span>
       <span>&nbsp;-&nbsp;</span>
-      <span class="specie"> {{ card.specie }}</span>
+      <span class="specie"> {{ character.specie }}</span>
     </div>
     <div class="last-location">
       <span [ngStyle]="{'color': 'gray'}">Last known location:</span>
-      <span>{{ card.location.name }}</span>
+      <span>{{ character.location.name }}</span>
     </div>
     <div class="origin">
       <span [ngStyle]="{'color': 'gray'}">Origin:</span>
-      <span>{{ card.origin.name }}</span>
+      <span>{{ character.origin.name }}</span>
     </div>
   </div>
 </div>
