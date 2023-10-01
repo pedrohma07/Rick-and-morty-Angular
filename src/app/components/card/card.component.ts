@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
-import { Card } from "src/app/interface/Card";
+import { Character } from "src/app/interface/Character";
+
+import { CharacterService } from "src/app/services/character.service";
 
 @Component({
   selector: "app-card",
@@ -7,20 +9,19 @@ import { Card } from "src/app/interface/Card";
   styleUrls: ["./card.component.scss"]
 })
 export class CardComponent {
-  cards: Card[] = [
-    {
-      name:"Rick Sanchez",
-      status:"Alive",
-      specie:"Human",
-      gender:"Male",
-      image:"https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-      location:{
-        name: "Citadel of Ricks"
-      },
-      origin: {
-        name: "Earth (C-137)"
-      }
-    }
-  ];
+  characters: Character[] = [];
+  countPage!: number;
+  page: number = 12;
 
+  constructor(private characterService: CharacterService){
+    this.getCharacters();
+    this.getPage();
+  }
+
+  getCharacters(): void {
+    this.characterService.getCharacter(this.page).subscribe((characters) => this.characters = characters);
+  }
+  getPage(): void{
+    this.characterService.getPage().subscribe((pages) => this.countPage = pages.info.pages);
+  }
 }

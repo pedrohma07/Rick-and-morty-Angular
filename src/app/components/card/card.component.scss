@@ -1,16 +1,17 @@
-.card{
+.character{
   display: flex;
   background-color: var(--primary-color);
-  border: 1px solid silver;
   border-radius: 10px;
+  margin: 10px;
   width: 100%;
   max-width: 600px;
   overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   div{
     display: flex;
     flex-direction: column;
   }
-  .character{
+  .characterImg{
     width: 230px;
   }
   .data{
@@ -56,5 +57,16 @@
       font-weight: 500;
     }
 
+  }
+}
+
+@media (max-width: 800px) {
+  .character{
+    flex-direction: column;
+    max-width: 300px;
+    padding-bottom: 20px;
+    .characterImg{
+      width: 100%;
+    }
   }
 }

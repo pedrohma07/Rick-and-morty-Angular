@@ -3,7 +3,8 @@
 
 :root{
   --primary-color: #3C3E44;
-  --title-text-color: #fff
+  --title-text-color: #fff;
+  --background-dark: #272B33
 }
 
 *{
@@ -11,4 +12,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto 
+}
+body{
+  width: 100%;
 }
