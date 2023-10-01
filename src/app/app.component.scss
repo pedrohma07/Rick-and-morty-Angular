@@ -11,12 +11,19 @@
     align-items: center;
     height: 300px;
   }
+  .logo-rick-morty{
+    width: 100%;
+  }
   app-card{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
     background-color: var(--background-dark);
-    padding: 0 10%;
+  }
+  app-search-input{
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 }
