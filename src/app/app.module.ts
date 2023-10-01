@@ -8,13 +8,15 @@ import { AppComponent } from "./app.component";
 import { CardComponent } from "./components/card/card.component";
 import { SearchInputComponent } from "./components/search-input/search-input.component";
 import { MainComponent } from "./page/main/main.component";
+import { PaginatorComponent } from "./components/paginator/paginator.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
     SearchInputComponent,
-    MainComponent
+    MainComponent,
+    PaginatorComponent
   ],
   imports: [
     BrowserModule,
